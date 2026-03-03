@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+
+  ai_project:
+    build: ./AI-Project
+    container_name: ai_project_container
+    volumes:
+      - ./AI-Project:/app
+    working_dir: /app/AI_Masterclass/Inference
+    command: python full_world_model.py
+    tty: true
+
+  raw_learning:
+    build: ./Raw_learnings
+    container_name: raw_learning_container
+    volumes:
+      - ./Raw_learnings:/app
+    working_dir: /app
+    tty: true
